@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Balai Vivaah Malwa</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff8ed;
+      color: #43251c;
+    }
+    header {
+      background: #800020;
+      color: white;
+      text-align: center;
+      padding: 24px 12px;
+    }
+    header h1 { margin: 0 0 8px; }
+    main { padding: 18px; max-width: 500px; margin: auto; }
+    .card {
+      background: white;
+      padding: 18px;
+      margin: 14px 0;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px #00000012;
+    }
+    input, select, button {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 12px;
+      margin: 7px 0;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    input, select { border: 1px solid #cbb9ad; }
+    button {
+      background: #800020;
+      color: white;
+      border: 0;
+      font-weight: bold;
+    }
+    footer { text-align: center; padding: 20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🌺 Balai Vivaah Malwa 🌺</h1>
+    <p>मालवा क्षेत्र का वैवाहिक परिचय मंच</p>
+  </header>
+  <main>
+    <div class="card">
+      <h2>हमारे मंच पर आपका स्वागत है</h2>
+      <p>विवाह हेतु परिचय की शुरुआत करें।</p>
+      <p>यह शुरुआती प्रोटोटाइप है। अभी इसमें वास्तविक सदस्य या सत्यापित रिश्ते उपलब्ध नहीं हैं।</p>
+    </div>
+    <div class="card">
+      <h2>परिचय फॉर्म</h2>
+      <form id="profileForm">
+        <label>पूरा नाम</label>
+        <input id="name" required placeholder="अपना नाम लिखें">
+        <label>आयु (18 वर्ष या अधिक)</label>
+        <input id="age" type="number" min="18" required placeholder="आयु">
+        <label>शहर</label>
+        <select id="city" required>
+          <option value="">शहर चुनें</option>
+          <option>इंदौर</option>
+          <option>उज्जैन</option>
+          <option>देवास</option>
+          <option>धार</option>
+          <option>अन्य</option>
+        </select>
+        <label>परिचय</label>
+        <input id="about" placeholder="अपने बारे में संक्षेप में">
+        <button type="submit">परिचय देखें</button>
+      </form>
+      <p id="result"></p>
+    </div>
+  </main>
+  <footer>Balai Vivaah Malwa · प्रारंभिक डेमो</footer>
+  <script>
+    document.getElementById('profileForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const age = Number(document.getElementById('age').value);
+      if (age < 18) {
+        document.getElementById('result').textContent =
+          'यह मंच केवल 18 वर्ष या अधिक आयु के वयस्कों के लिए है।';
+        return;
+      }
+      document.getElementById('result').textContent =
+        'धन्यवाद! फॉर्म का डेमो सफल रहा। अभी आपकी जानकारी ऑनलाइन सेव नहीं हुई है।';
+    });
+  </script>
+</body>
+</html>
